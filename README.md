@@ -11,14 +11,14 @@
 
 ## 2. 核心技術與展示模組 (Core Modules)
 
-- **響應式佈局與互動 (RWD Layout)**[cite: 16]
+- **響應式佈局與互動 (RWD Layout)**
 
   - **技術亮點：** 結合 CSS Flexbox 與 Bootstrap 5，實現在不同裝置的顯示方式。
   - **列印功能改善：** 實作 `@media print` 規則，確保匯出 PDF 或列印時自動隱藏導覽列與按鈕等非核心元素，呈現乾淨的文件版面。
 
 - **資料表格設計 (Data Table)**
 
-  - **技術：** 基於 HTML 的`<form>`並運用 `table-responsive` 容器與 `white-space: nowrap` 建立橫向安全滾動機制，並落實 `<thead>` 與 `<tbody>` 等語意化結構。
+  - **技術：** 基於 HTML 的`<form>`並運用 `table-responsive` 容器與 `white-space: nowrap` 建立橫向安全滾動機制，並落實 `<thead>` 與 `<tbody>` 等結構。
 
 - **動態表單與輸入驗證 (Form Validation)**
 
