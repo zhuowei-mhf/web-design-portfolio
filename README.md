@@ -1,4 +1,4 @@
-# 基礎網頁設計實務與課堂輔導展示系統 (Web Design TA Showcase)
+# Web Design TA Showcase
 
 ## 1. 專案概述 (Project Overview)
 
