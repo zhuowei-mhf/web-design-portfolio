@@ -68,7 +68,7 @@
     <div class="container">
       <div class="text-center mb-4">
         <h3 class="fw-bold">精選專案輪播展示</h3>
-        <p class="text-muted">運用 Bootstrap 5 輪播元件，示範定時播放、指示圓點切換與手動控制器</p>
+        <p class="text-muted">運用 Bootstrap 元件，示範定時播放、指示圓點切換與手動控制器</p>
       </div>
 
       <div id="portfolioCarousel" class="carousel slide shadow rounded overflow-hidden" data-bs-ride="carousel">
@@ -115,49 +115,65 @@
 
   <main class="container py-5">
 
-    <section id="rwd-layout" class="mb-5">
-      <h3 class="fw-bold mb-4 border-start border-4 border-primary ps-3">1. 響應式佈局與互動 (RWD)</h3>
-      <div class="row g-4">
-        <div class="col-lg-5">
-          <div class="card h-100 border-0 shadow-sm overflow-hidden">
-            <img src="assets/img/usr_home.png" class="showcase-img" alt="首頁排版截圖"
-              onerror="this.src='https://placehold.co/600x350/f8f9fa/495057?text=Home+Layout';">
-            <div class="card-body">
-              <span class="badge bg-primary mb-2">HTML5 / Flexbox</span>
-              <h5 class="card-title fw-bold">首頁圖文排版與彈窗</h5>
-              <p class="card-text text-muted small">
-                實際負責教育部 USR 計畫網路系統中，實作計畫願景的雙欄圖文排版，並以 JavaScript 開發最新消息彈出視窗功能，可點擊下方按鈕體驗彈窗功能。
-              </p>
-              <button class="btn btn-outline-primary btn-sm mt-2" onclick="toggleCustomModal(true)">點我展示彈窗功能</button>
-            </div>
+<section id="rwd-layout" class="mb-5">
+  <div class="d-flex align-items-center mb-4 border-start border-4 border-primary ps-3">
+    <h3 class="fw-bold mb-0">1. 響應式佈局與互動 (RWD)</h3>
+    <span class="badge bg-info text-dark ms-3 fs-6 align-middle">本站支援 RWD 縮放測試</span>
+  </div>
+  <div class="row g-4">
+    <div class="col-lg-5">
+      <h6 class="fw-bold text-primary mb-3"><i class="bi bi-image"></i> USR 網站實作對比</h6>
+      <div class="card h-100 border-0 shadow-sm overflow-hidden p-3">
+        <div class="row g-2 mb-3 align-items-center">
+          <div class="col-8">
+            <img src="assets/img/usr_pc.png" class="img-fluid rounded border shadow-sm" alt="電腦版排版"
+              onerror="this.src='https://placehold.co/800x450/f8f9fa/495057?text=Desktop';">
+            <div class="text-center small text-muted mt-1">桌機版</div>
+          </div>
+          <div class="col-4">
+            <img src="assets/img/usr_mobile.png" class="img-fluid rounded border shadow-sm" alt="手機版排版"
+              onerror="this.src='https://placehold.co/400x800/f8f9fa/495057?text=Mobile';">
+            <div class="text-center small text-muted mt-1">手機版</div>
           </div>
         </div>
-        <div class="col-lg-7">
-          <div class="row g-3">
-            <div class="col-12">
-              <div class="card border-0 shadow-sm p-3">
-                <h5 class="fw-bold"><i class="bi bi-phone text-primary me-2"></i>行動端 (Mobile)</h5>
-                <p class="text-muted small mb-0">所有區塊在 <code>max-width: 768px</code> 下自動切換單排版，確保在不同的裝置能成功展示不跑版。</p>
-              </div>
-            </div>
-            <div class="col-12">
-              <div class="card border-0 shadow-sm p-3">
-                <h5 class="fw-bold"><i class="bi bi-display text-primary me-2"></i>桌機版</h5>
-                <p class="text-muted small mb-0">運用 <code>flex-direction: row</code> 與 <code>gap</code>
-                  間距設定</p>
-              </div>
-            </div>
-            <div class="col-12">
-              <div class="card border-0 shadow-sm p-3">
-                <h5 class="fw-bold"><i class="bi bi-printer text-primary me-2"></i>列印排版</h5>
-                <p class="text-muted small mb-0">實作 <code>@media print</code> 規則，在列印或匯出 PDF
-                  時自動隱藏導覽列（如最底下的版權說明）等無效標籤。</p>
-              </div>
-            </div>
+        <div class="mt-auto">
+          <span class="badge bg-primary mb-2">HTML5 / Flexbox</span>
+          <h5 class="card-title fw-bold">首頁圖文排版與彈窗</h5>
+          <p class="card-text text-muted small">
+            實際負責教育部 <a href="https://usr.ie.nthu.edu.tw" target="_blank" class="text-decoration-none fw-bold">清大 USR
+              計畫網路系統</a> 中，實作計畫願景的雙欄圖文排版。上方呈現桌機與手機端自動流暢堆疊的對比，並以 JavaScript 開發最新消息點擊開窗。
+          </p>
+          <button class="btn btn-outline-primary btn-sm w-100 mt-2" onclick="toggleCustomModal(true)">點我展示彈窗功能</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-7">
+      <h6 class="fw-bold text-success mb-3"><i class="bi bi-cursor"></i> 本網站測試 (請縮放視窗體驗)</h6>
+      <div class="row g-3">
+        <div class="col-12">
+          <div class="card border-0 shadow-sm p-3">
+            <h5 class="fw-bold"><i class="bi bi-phone text-primary me-2"></i>行動端 (Mobile)</h5>
+            <p class="text-muted small mb-0">所有區塊在 <code>max-width: 768px</code> 下自動切換單欄排版，確保在不同的裝置能成功展示不跑版。</p>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card border-0 shadow-sm p-3">
+            <h5 class="fw-bold"><i class="bi bi-display text-primary me-2"></i>桌機版</h5>
+            <p class="text-muted small mb-0">運用 <code>flex-direction: row</code> 與 <code>gap</code> 間距設定。
+            </p>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="card border-0 shadow-sm p-3">
+            <h5 class="fw-bold"><i class="bi bi-printer text-primary me-2"></i>列印排版</h5>
+            <p class="text-muted small mb-0">實作 <code>@media print</code> 規則，在列印或匯出 PDF
+              時自動隱藏導覽列（如最底下的版權說明等無效標籤)。</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
     <section id="table-design" class="mb-5">
       <h3 class="fw-bold mb-4 border-start border-4 border-primary ps-3">2. 表格排版 (Data Table)</h3>
