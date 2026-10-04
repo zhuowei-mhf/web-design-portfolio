@@ -1,34 +1,42 @@
-- **Purpose:**  
-  本專案為應徵陽明交通大學「基礎網頁設計」課程教學助理（TA）所建置之專案展示系統。重點展示如何運用標準網頁技術輔導修課學生達成課堂學習指標：
+# 基礎網頁設計實務與課堂輔導展示系統 (Web Design TA Showcase)
 
-  - **語意化切版與 RWD 實作：** 遵循 HTML5 規範，運用 Flexbox 與 Bootstrap 5 網格打造跨裝置響應式佈局與列印排版（Print CSS）。
-  - **資料表格與表單元件：** 示範解決初學者常見之表格破版問題，並實作單選、複選、必填驗證等動態表單控制流。
-  - **原生 JavaScript 互動：** 零框架依賴，透過原生 DOM 操作實作定時圖片輪播與自製遮罩彈窗（Modal），展示扎實的原生程式功底。
+## 1. 專案概述 (Project Overview)
 
-- **Tech Stack:**
+本專案為應徵陽明交通大學「基礎網頁設計」課程教學助理（TA）所建置之技術展示系統。專案淬鍊自 2025-2026 於清華大學實際參與研發之「教育部 USR 計畫網路平台」前端核心成果。
 
-  - Frontend: HTML5 (Semantic Tags), CSS3 (Flexbox, Media Queries), Bootstrap 5, Vanilla JavaScript
-  - Deployment & VCS: Git, GitHub Pages
+本站採用**「實作對照展示法」**，將真實專案的截圖與可互動的網頁元件並列呈現：
 
-- **Primary Contacts:**
-  - 專案展示者 / 助教應徵者：卓偉祥 (zhuozhuowei@gmail.com / 陽明交通大學多媒體工程研究所)
+- **USR 網站實作（左側）：** 展示過去在 USR 專案中負責的真實 UI 介面與系統架構。
+- **本網站測試（右側）：** 針對課程目標，使用純粹的 HTML5、CSS3 與 JavaScript 重新建構的可互動範例。
 
----
+## 2. 核心技術與展示模組 (Core Modules)
 
-## 2. Setup and Installation
+- **響應式佈局與互動 (RWD Layout)**[cite: 16]
 
-- **Prerequisites:**
+  - **技術亮點：** 結合 CSS Flexbox 與 Bootstrap 5，實現在不同裝置的顯示方式。
+  - **列印功能改善：** 實作 `@media print` 規則，確保匯出 PDF 或列印時自動隱藏導覽列與按鈕等非核心元素，呈現乾淨的文件版面。
 
-  - Modern Web Browser (Chrome, Edge, Safari)
-  - Git
-  - VS Code
+- **資料表格設計 (Data Table)**
 
-- **Build & Run Instructions:**
-  1. 複製專案庫：
-     ```sh
-     git clone [https://github.com/](https://github.com/)<your-username>/web-design-portfolio.git
-     cd web-design-portfolio
-     ```
-  2. 開啟預覽：
-     直接以瀏覽器開啟 `index.html`，或使用 VS Code Live Server 擴充套件啟動。
-     EOF
+  - **技術：** 基於 HTML 的`<form>`並運用 `table-responsive` 容器與 `white-space: nowrap` 建立橫向安全滾動機制，並落實 `<thead>` 與 `<tbody>` 等語意化結構。
+
+- **動態表單與輸入驗證 (Form Validation)**
+
+  - **技術：** 統整單選（Radio）、下拉選單（Select）、文字輸入（Textarea）與核取方塊（Checkbox），並實作防呆驗證確保使用者的填答情況。
+
+- **彈窗功能**
+
+## 3. 專案架構 (Directory Structure)
+
+```text
+web-design-portfolio/
+├── index.html          # 系統主入口
+├── css/
+│   └── style.css       # 包含客CSS 變數與元件細節修飾
+├── assets/
+│   └── img/            # 影像資源目錄
+│       ├── usr_home.png  # USR 專案首頁截圖
+│       ├── usr_table.png # USR 後台表格截圖
+│       └── usr_form.png  # USR 問卷表單截圖
+└── README.md           # 本網頁技術說明文件
+```
