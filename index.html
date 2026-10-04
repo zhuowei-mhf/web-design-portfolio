@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>卓偉祥 | 網頁作品集 (應徵基礎網頁設計課程助教用)</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <style>
+    :root {
+      --primary-color: #0d6efd;
+      --border-color: #dee2e6;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #333;
+    }
+    .hero-section {
+      background: #f8f9fa;
+      border-bottom: 1px solid var(--border-color);
+      padding: 60px 0;
+    }
+    .badge-role {
+      background-color: #e7f1ff;
+      color: var(--primary-color);
+      font-weight: 600;
+    }
+
+    .table-container {
+      background: #fff;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      overflow-x: auto; 
+    }
+    .custom-table th {
+      background-color: #f1f4f9;
+      color: #495057;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .custom-table td {
+      vertical-align: middle;
+      font-size: 0.95rem;
+    }
+    /* 自訂 Modal 遮罩 (示範原生 CSS/JS 互動) */
+    .custom-modal-mask {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1050;
+    }
+    .custom-modal-mask.show {
+      display: flex;
+    }
+    .custom-modal-box {
+      background: #fff;
+      width: 90%;
+      max-width: 500px;
+      border-radius: 10px;
+      padding: 24px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Wei-Hsiang | Portfolio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#rwd-layout">RWD 切版</a></li>
+          <li class="nav-item"><a class="nav-link" href="#table-design">表格設計</a></li>
+          <li class="nav-item"><a class="nav-link" href="#form-design">表單元件</a></li>
+          <li class="nav-item"><a class="nav-link" href="#ta-support">助教輔導規劃</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero-section text-center">
+    <div class="container">
+      <span class="badge badge-role px-3 py-2 rounded-pill mb-3">陽明交大多工所 卓偉祥</span>
+      <h1 class="display-6 fw-bold">前端切版實作與網頁設計助教展示</h1>
+      <p class="lead text-muted mx-auto mt-3" style="max-width: 720px;">
+        聚焦於語意化 HTML5/CSS 基礎打底、Flexbox/Grid 響應式佈局（RWD）、資料表格排版、表單驗證與 GitHub 專案部署。
+      </p>
+      <div class="mt-4">
+        <a href="#table-design" class="btn btn-primary px-4 me-2">檢視實作成果</a>
+        <button class="btn btn-outline-secondary px-4" onclick="toggleCustomModal(true)">觸發自製 Modal 示範</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container py-5">
+    
+    <!-- 3. RWD 與佈局實作展示 -->
+    <section id="rwd-layout" class="mb-5">
+      <h3 class="fw-bold mb-3 border-start border-4 border-primary ps-3">1. 響應式佈局與 CSS 斷點設計 (RWD)</h3>
+      <p class="text-muted">
+        運用 CSS Flexbox 與 Bootstrap 網格斷點（<code>col-12 col-md-6 col-lg-4</code>），使圖文與資訊卡片在不同螢幕寬度下自然轉換垂直與水平排列，確保行動端無跑版。
+      </p>
+
+      <div class="row g-4 mt-2">
+        <div class="col-12 col-md-4">
+          <div class="card h-100 border-0 shadow-sm p-3">
+            <h5 class="fw-bold"><i class="bi bi-phone text-primary me-2"></i>行動端優先 (Mobile)</h5>
+            <p class="text-muted small">所有區塊在 <code>max-width: 768px</code> 下自動切換單欄流動排版，按鈕與文字點擊範圍符合手指操作人因工程。</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card h-100 border-0 shadow-sm p-3">
+            <h5 class="fw-bold"><i class="bi bi-display text-primary me-2"></i>桌機版雙欄佈局</h5>
+            <p class="text-muted small">運用 <code>flex-direction: row</code> 與 <code>gap</code> 間距設定，維持視覺重心與水平對齊，改善可讀性。</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card h-100 border-0 shadow-sm p-3">
+            <h5 class="fw-bold"><i class="bi bi-printer text-primary me-2"></i>列印排版優化 (Print CSS)</h5>
+            <p class="text-muted small">實作 <code>@media print</code> 規則，在列印或匯出 PDF 時自動隱藏導覽列、操作按鈕等無效標籤，保留乾淨資料。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 表格設計展示 (Table UI) -->
+    <section id="table-design" class="mb-5">
+      <h3 class="fw-bold mb-3 border-start border-4 border-primary ps-3">2. 複雜資料表格排版 (Data Table)</h3>
+      <p class="text-muted">
+        取自清大 USR 計畫後台活動與會議列表實作。針對零基礎同學常遇到的「表格破版」、「內容過長截斷」等痛點，建立具備 RWD 滾動保護與語意結構的標準 Table。
+      </p>
+
+      <div class="table-container p-3">
+        <table class="table table-hover custom-table mb-0">
+          <thead>
+            <tr>
+              <th>活動編號</th>
+              <th>活動日期</th>
+              <th>場域地點</th>
+              <th>活動名稱</th>
+              <th>參與對象</th>
+              <th>審核狀態</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>E-101</code></td>
+              <td>2026-10-12</td>
+              <td>桃園市龜山區</td>
+              <td>早期療育推廣與健康篩檢</td>
+              <td><span class="badge bg-secondary">教師 2</span> <span class="badge bg-secondary">學生 8</span></td>
+              <td><span class="badge bg-success">已確認</span></td>
+            </tr>
+            <tr>
+              <td><code>E-102</code></td>
+              <td>2026-10-19</td>
+              <td>桃園市大溪區</td>
+              <td>兒童發展評估外展聯評</td>
+              <td><span class="badge bg-secondary">教師 1</span> <span class="badge bg-secondary">專業人員 3</span></td>
+              <td><span class="badge bg-warning text-dark">待審核</span></td>
+            </tr>
+            <tr>
+              <td><code>E-103</code></td>
+              <td>2026-10-26</td>
+              <td>新竹縣竹北市</td>
+              <td>家庭支持與個案討論會</td>
+              <td><span class="badge bg-secondary">學生 5</span> <span class="badge bg-secondary">家長 12</span></td>
+              <td><span class="badge bg-success">已確認</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <small class="text-muted mt-2 d-block">* 包含表頭 <code>&lt;thead&gt;</code>、資料主體 <code>&lt;tbody&gt;</code> 與行動端橫向滑動包覆層 <code>table-responsive</code>。</small>
+    </section>
+
+
+    <section id="form-design" class="mb-5">
+      <h3 class="fw-bold mb-3 border-start border-4 border-primary ps-3">3. 表單元件與動態輸入驗證 (Forms)</h3>
+      <p class="text-muted">
+        展示問卷系統中所使用之單選、多選、文字輸入及必填檢查機制：
+      </p>
+
+      <div class="card border-0 shadow-sm p-4">
+        <form onsubmit="event.preventDefault(); alert('表單驗證成功！');">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label fw-bold">參與身分 <span class="text-danger">*</span></label>
+              <select class="form-select" required>
+                <option value="">請選擇您的身分...</option>
+                <option value="1">授課教師</option>
+                <option value="2">修課學生</option>
+                <option value="3">教學助理 (TA)</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label fw-bold">聯絡 Email <span class="text-danger">*</span></label>
+              <input type="email" class="form-control" placeholder="name@example.com" required>
+            </div>
+            <div class="col-12">
+              <label class="form-label fw-bold">反思心得或建議 (至少 10 字)</label>
+              <textarea class="form-control" rows="3" minlength="10" placeholder="請輸入本次實作的心得反饋..." required></textarea>
+            </div>
+            <div class="col-12">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="agreeRule" required>
+                <label class="form-check-label small text-muted" for="agreeRule">
+                  我已確認上述資料填寫無誤，並同意遵循課堂作業規範
+                </label>
+              </div>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary">送出表單驗證</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+
+  </main>
+
+  <div id="customModal" class="custom-modal-mask" onclick="toggleCustomModal(false)">
+    <div class="custom-modal-box" onclick="event.stopPropagation()">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h5 class="fw-bold mb-0">自製原生 Modal 元件</h5>
+        <button type="button" class="btn-close" onclick="toggleCustomModal(false)"></button>
+      </div>
+      <p class="text-muted small">
+        這是一個以純原生 JavaScript 與 CSS 實作的彈窗。展示了：
+      </p>
+      <ul class="text-muted small">
+        <li><code>event.stopPropagation()</code>：防止點擊彈窗內部時誤觸背景遮罩關閉。</li>
+        <li><code>document.body.style.overflow = 'hidden'</code>：彈窗開啟時鎖定背景滾動條。</li>
+      </ul>
+      <div class="text-end">
+        <button class="btn btn-sm btn-secondary" onclick="toggleCustomModal(false)">關閉視窗</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="py-4 bg-dark text-white-50 text-center small">
+    <div class="container">
+      © 2026 . Built with HTML5, CSS3, Bootstrap 5 & GitHub Pages.
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    function toggleCustomModal(show) {
+      const modal = document.getElementById('customModal');
+      if (show) {
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+      } else {
+        modal.classList.remove('show');
+        document.body.style.overflow = '';
+      }
+    }
+  </script>
+</body>
+</html>
