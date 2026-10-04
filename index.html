@@ -1,87 +1,30 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>卓偉祥 | 網頁作品集 (應徵基礎網頁設計課程助教用)</title>
-  
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  
-  <style>
-    :root {
-      --primary-color: #0d6efd;
-      --border-color: #dee2e6;
-    }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      color: #333;
-    }
-    .hero-section {
-      background: #f8f9fa;
-      border-bottom: 1px solid var(--border-color);
-      padding: 60px 0;
-    }
-    .badge-role {
-      background-color: #e7f1ff;
-      color: var(--primary-color);
-      font-weight: 600;
-    }
-
-    .table-container {
-      background: #fff;
-      border-radius: 8px;
-      border: 1px solid var(--border-color);
-      overflow-x: auto; 
-    }
-    .custom-table th {
-      background-color: #f1f4f9;
-      color: #495057;
-      font-weight: 600;
-      white-space: nowrap;
-    }
-    .custom-table td {
-      vertical-align: middle;
-      font-size: 0.95rem;
-    }
-    /* 自訂 Modal 遮罩 (示範原生 CSS/JS 互動) */
-    .custom-modal-mask {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.5);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 1050;
-    }
-    .custom-modal-mask.show {
-      display: flex;
-    }
-    .custom-modal-box {
-      background: #fff;
-      width: 90%;
-      max-width: 500px;
-      border-radius: 10px;
-      padding: 24px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="#">Wei-Hsiang | Portfolio</a>
+      <a class="navbar-brand fw-bold" href="#">卓偉祥 | 網頁作品展示</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navContent">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#rwd-layout">RWD 切版</a></li>
+          <li class="nav-item"><a class="nav-link" href="#carousel-section">圖片輪播展示</a></li>
+          <li class="nav-item"><a class="nav-link" href="#rwd-layout">響應式佈局</a></li>
           <li class="nav-item"><a class="nav-link" href="#table-design">表格設計</a></li>
           <li class="nav-item"><a class="nav-link" href="#form-design">表單元件</a></li>
-          <li class="nav-item"><a class="nav-link" href="#ta-support">助教輔導規劃</a></li>
         </ul>
       </div>
     </div>
@@ -90,9 +33,10 @@
   <header class="hero-section text-center">
     <div class="container">
       <span class="badge badge-role px-3 py-2 rounded-pill mb-3">陽明交大多工所 卓偉祥</span>
-      <h1 class="display-6 fw-bold">前端切版實作與網頁設計助教展示</h1>
+      <h1 class="display-6 fw-bold">前端實作與網頁設計展示</h1>
+      <h2 class="display-6 fw-bold">應徵課程助教用</h2>
       <p class="lead text-muted mx-auto mt-3" style="max-width: 720px;">
-        聚焦於語意化 HTML5/CSS 基礎打底、Flexbox/Grid 響應式佈局（RWD）、資料表格排版、表單驗證與 GitHub 專案部署。
+        本網頁以過去在usr計畫所架設的網站為基準，並聚焦於前端 HTML5/CSS 基礎設計、RWD、資料表格排版、表單驗證等前端功能與 GitHub 專案部署實作。
       </p>
       <div class="mt-4">
         <a href="#table-design" class="btn btn-primary px-4 me-2">檢視實作成果</a>
@@ -101,144 +45,231 @@
     </div>
   </header>
 
+  <section id="carousel-section" class="py-5 bg-white border-bottom">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h3 class="fw-bold">精選專案輪播展示</h3>
+        <p class="text-muted">運用 Bootstrap 5 輪播元件，示範定時播放、指示圓點切換與手動控制器</p>
+      </div>
+
+      <div id="portfolioCarousel" class="carousel slide shadow rounded overflow-hidden" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#portfolioCarousel" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="assets/img/usr_home.png" class="d-block w-100" alt="USR 首頁切版"
+              onerror="this.src='https://placehold.co/1200x400/212529/fff?text=USR+Home+Layout';">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+              <h5>USR 網路平台首頁</h5>
+              <p>HTML5 雙欄排版與最新消息彈窗</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="assets/img/usr_table.png" class="d-block w-100" alt="USR 後台管理表格"
+              onerror="this.src='https://placehold.co/1200x400/0d6efd/fff?text=Admin+Data+Table';">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+              <h5>助理端活動檢核與管理表格</h5>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="assets/img/usr_form.png" class="d-block w-100" alt="問卷表單系統"
+              onerror="this.src='https://placehold.co/1200x400/198754/fff?text=Questionnaire+Form+System';">
+            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+              <h5>跨角色問卷與動態表單系統</h5>
+              <p>支援單選、複選、開放文字題型與送出前防呆檢查</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#portfolioCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
   <main class="container py-5">
-    
-    <!-- 3. RWD 與佈局實作展示 -->
+
     <section id="rwd-layout" class="mb-5">
-      <h3 class="fw-bold mb-3 border-start border-4 border-primary ps-3">1. 響應式佈局與 CSS 斷點設計 (RWD)</h3>
-      <p class="text-muted">
-        運用 CSS Flexbox 與 Bootstrap 網格斷點（<code>col-12 col-md-6 col-lg-4</code>），使圖文與資訊卡片在不同螢幕寬度下自然轉換垂直與水平排列，確保行動端無跑版。
-      </p>
-
-      <div class="row g-4 mt-2">
-        <div class="col-12 col-md-4">
-          <div class="card h-100 border-0 shadow-sm p-3">
-            <h5 class="fw-bold"><i class="bi bi-phone text-primary me-2"></i>行動端優先 (Mobile)</h5>
-            <p class="text-muted small">所有區塊在 <code>max-width: 768px</code> 下自動切換單欄流動排版，按鈕與文字點擊範圍符合手指操作人因工程。</p>
+      <h3 class="fw-bold mb-4 border-start border-4 border-primary ps-3">1. 響應式佈局與互動 (RWD)</h3>
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <div class="card h-100 border-0 shadow-sm overflow-hidden">
+            <img src="assets/img/usr_home.png" class="showcase-img" alt="首頁排版截圖"
+              onerror="this.src='https://placehold.co/600x350/f8f9fa/495057?text=Home+Layout';">
+            <div class="card-body">
+              <span class="badge bg-primary mb-2">HTML5 / Flexbox</span>
+              <h5 class="card-title fw-bold">首頁圖文排版與彈窗</h5>
+              <p class="card-text text-muted small">
+                實際負責教育部 USR 計畫網路系統中，實作計畫願景的雙欄圖文排版，並以 JavaScript 開發最新消息點擊開窗。右側為運用 CSS Flexbox 與 Bootstrap 網格斷點實作的響應式組件展示。
+              </p>
+            </div>
           </div>
         </div>
-        <div class="col-12 col-md-4">
-          <div class="card h-100 border-0 shadow-sm p-3">
-            <h5 class="fw-bold"><i class="bi bi-display text-primary me-2"></i>桌機版雙欄佈局</h5>
-            <p class="text-muted small">運用 <code>flex-direction: row</code> 與 <code>gap</code> 間距設定，維持視覺重心與水平對齊，改善可讀性。</p>
-          </div>
-        </div>
-        <div class="col-12 col-md-4">
-          <div class="card h-100 border-0 shadow-sm p-3">
-            <h5 class="fw-bold"><i class="bi bi-printer text-primary me-2"></i>列印排版優化 (Print CSS)</h5>
-            <p class="text-muted small">實作 <code>@media print</code> 規則，在列印或匯出 PDF 時自動隱藏導覽列、操作按鈕等無效標籤，保留乾淨資料。</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. 表格設計展示 (Table UI) -->
-    <section id="table-design" class="mb-5">
-      <h3 class="fw-bold mb-3 border-start border-4 border-primary ps-3">2. 複雜資料表格排版 (Data Table)</h3>
-      <p class="text-muted">
-        取自清大 USR 計畫後台活動與會議列表實作。針對零基礎同學常遇到的「表格破版」、「內容過長截斷」等痛點，建立具備 RWD 滾動保護與語意結構的標準 Table。
-      </p>
-
-      <div class="table-container p-3">
-        <table class="table table-hover custom-table mb-0">
-          <thead>
-            <tr>
-              <th>活動編號</th>
-              <th>活動日期</th>
-              <th>場域地點</th>
-              <th>活動名稱</th>
-              <th>參與對象</th>
-              <th>審核狀態</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>E-101</code></td>
-              <td>2026-10-12</td>
-              <td>桃園市龜山區</td>
-              <td>早期療育推廣與健康篩檢</td>
-              <td><span class="badge bg-secondary">教師 2</span> <span class="badge bg-secondary">學生 8</span></td>
-              <td><span class="badge bg-success">已確認</span></td>
-            </tr>
-            <tr>
-              <td><code>E-102</code></td>
-              <td>2026-10-19</td>
-              <td>桃園市大溪區</td>
-              <td>兒童發展評估外展聯評</td>
-              <td><span class="badge bg-secondary">教師 1</span> <span class="badge bg-secondary">專業人員 3</span></td>
-              <td><span class="badge bg-warning text-dark">待審核</span></td>
-            </tr>
-            <tr>
-              <td><code>E-103</code></td>
-              <td>2026-10-26</td>
-              <td>新竹縣竹北市</td>
-              <td>家庭支持與個案討論會</td>
-              <td><span class="badge bg-secondary">學生 5</span> <span class="badge bg-secondary">家長 12</span></td>
-              <td><span class="badge bg-success">已確認</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <small class="text-muted mt-2 d-block">* 包含表頭 <code>&lt;thead&gt;</code>、資料主體 <code>&lt;tbody&gt;</code> 與行動端橫向滑動包覆層 <code>table-responsive</code>。</small>
-    </section>
-
-
-    <section id="form-design" class="mb-5">
-      <h3 class="fw-bold mb-3 border-start border-4 border-primary ps-3">3. 表單元件與動態輸入驗證 (Forms)</h3>
-      <p class="text-muted">
-        展示問卷系統中所使用之單選、多選、文字輸入及必填檢查機制：
-      </p>
-
-      <div class="card border-0 shadow-sm p-4">
-        <form onsubmit="event.preventDefault(); alert('表單驗證成功！');">
+        <div class="col-lg-7">
           <div class="row g-3">
-            <div class="col-md-6">
-              <label class="form-label fw-bold">參與身分 <span class="text-danger">*</span></label>
-              <select class="form-select" required>
-                <option value="">請選擇您的身分...</option>
-                <option value="1">授課教師</option>
-                <option value="2">修課學生</option>
-                <option value="3">教學助理 (TA)</option>
-              </select>
-            </div>
-            <div class="col-md-6">
-              <label class="form-label fw-bold">聯絡 Email <span class="text-danger">*</span></label>
-              <input type="email" class="form-control" placeholder="name@example.com" required>
-            </div>
             <div class="col-12">
-              <label class="form-label fw-bold">反思心得或建議 (至少 10 字)</label>
-              <textarea class="form-control" rows="3" minlength="10" placeholder="請輸入本次實作的心得反饋..." required></textarea>
-            </div>
-            <div class="col-12">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="agreeRule" required>
-                <label class="form-check-label small text-muted" for="agreeRule">
-                  我已確認上述資料填寫無誤，並同意遵循課堂作業規範
-                </label>
+              <div class="card border-0 shadow-sm p-3">
+                <h5 class="fw-bold"><i class="bi bi-phone text-primary me-2"></i>行動端 (Mobile)</h5>
+                <p class="text-muted small mb-0">所有區塊在 <code>max-width: 768px</code> 下自動切換單排版，確保在不同的裝置能成功展示不跑版。</p>
               </div>
             </div>
             <div class="col-12">
-              <button type="submit" class="btn btn-primary">送出表單驗證</button>
+              <div class="card border-0 shadow-sm p-3">
+                <h5 class="fw-bold"><i class="bi bi-display text-primary me-2"></i>桌機版</h5>
+                <p class="text-muted small mb-0">運用 <code>flex-direction: row</code> 與 <code>gap</code>
+                  間距設定，維持視覺重心與水平對齊。</p>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="card border-0 shadow-sm p-3">
+                <h5 class="fw-bold"><i class="bi bi-printer text-primary me-2"></i>列印排版優化 (Print CSS)</h5>
+                <p class="text-muted small mb-0">實作 <code>@media print</code> 規則，在列印或匯出 PDF
+                  時自動隱藏導覽列（如頂段頁面或著最底下的版權說明）、操作按鈕等無效標籤。</p>
+              </div>
             </div>
           </div>
-        </form>
+        </div>
       </div>
     </section>
 
+    <section id="table-design" class="mb-5">
+      <h3 class="fw-bold mb-4 border-start border-4 border-primary ps-3">2. 表格排版 (Data Table)</h3>
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="card h-100 border-0 shadow-sm overflow-hidden">
+            <img src="assets/img/usr_table.png" class="showcase-img" alt="後台表格截圖"
+              onerror="this.src='https://placehold.co/600x350/f8f9fa/495057?text=Data+Table+UI';">
+            <div class="card-body">
+              <span class="badge bg-success mb-2">Table處理</span>
+              <h5 class="card-title fw-bold">後台管理與資料表格</h5>
+              <p class="card-text text-muted small">
+                取自過去參與清大、長庚 USR 計畫實作。設計活動、會議與人員名單列表，解決複雜資料欄位擠壓問題，實作橫向安全滾動機制。
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="table-container p-3 h-100 d-flex flex-column justify-content-center">
+            <table class="table table-hover custom-table mb-0">
+              <thead>
+                <tr>
+                  <th>活動編號</th>
+                  <th>活動日期</th>
+                  <th>場域地點</th>
+                  <th>活動名稱</th>
+                  <th>參與對象</th>
+                  <th>審核狀態</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>E-101</code></td>
+                  <td>2026-10-12</td>
+                  <td>桃園市龜山區</td>
+                  <td>早期療育推廣與健康篩檢</td>
+                  <td><span class="badge bg-secondary">教師 2</span> <span class="badge bg-secondary">學生 8</span></td>
+                  <td><span class="badge bg-success">已確認</span></td>
+                </tr>
+                <tr>
+                  <td><code>E-102</code></td>
+                  <td>2026-10-19</td>
+                  <td>桃園市大溪區</td>
+                  <td>兒童發展評估外展聯評</td>
+                  <td><span class="badge bg-secondary">教師 1</span> <span class="badge bg-secondary">專業人員 3</span></td>
+                  <td><span class="badge bg-warning text-dark">待審核</span></td>
+                </tr>
+                <tr>
+                  <td><code>E-103</code></td>
+                  <td>2026-10-26</td>
+                  <td>新竹縣竹北市</td>
+                  <td>家庭支持與個案討論會</td>
+                  <td><span class="badge bg-secondary">學生 5</span> <span class="badge bg-secondary">家長 12</span></td>
+                  <td><span class="badge bg-success">已確認</span></td>
+                </tr>
+              </tbody>
+            </table>
+            <small class="text-muted mt-3 d-block">* 包含表頭 <code>&lt;thead&gt;</code>、資料主體 <code>&lt;tbody&gt;</code>
+              與行動端橫向滑動包覆層 <code>table-responsive</code>。</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="form-design" class="mb-5">
+      <h3 class="fw-bold mb-4 border-start border-4 border-primary ps-3">3. 表單與輸入驗證 (Forms)</h3>
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <div class="card h-100 border-0 shadow-sm overflow-hidden">
+            <img src="assets/img/usr_form.png" class="showcase-img" alt="問卷表單截圖"
+              onerror="this.src='https://placehold.co/600x350/f8f9fa/495057?text=Form+Validation';">
+            <div class="card-body">
+              <span class="badge bg-warning text-dark mb-2">表單元件 / Print CSS</span>
+              <h5 class="card-title fw-bold">動態問卷與列印優化</h5>
+              <p class="card-text text-muted small">
+                跨角色問卷與動態表單系統，支援單選、複選、開放文字題型與送出前防呆檢查。右側為運用 HTML5 表單驗證機制設計的實作範例。
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="card border-0 shadow-sm p-4 h-100 d-flex flex-column justify-content-center">
+            <form onsubmit="event.preventDefault(); alert('表單驗證成功！');">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label fw-bold">參與身分 <span class="text-danger">*</span></label>
+                  <select class="form-select" required>
+                    <option value="">請選擇您的身分...</option>
+                    <option value="1">授課教師</option>
+                    <option value="2">修課學生</option>
+                    <option value="3">教學助理 (TA)</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-bold">聯絡 Email <span class="text-danger">*</span></label>
+                  <input type="email" class="form-control" placeholder="name@example.com" required>
+                </div>
+                <div class="col-12">
+                  <label class="form-label fw-bold">心得或建議 (至少 10 字)</label>
+                  <textarea class="form-control" rows="3" minlength="10" placeholder="請輸入本次實作的心得反饋..."
+                    required></textarea>
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="agreeRule" required>
+                    <label class="form-check-label small text-muted" for="agreeRule">
+                      我已確認上述資料填寫無誤，並同意遵循課堂作業規範
+                    </label>
+                  </div>
+                </div>
+                <div class="col-12 mt-3">
+                  <button type="submit" class="btn btn-primary">送出表單驗證</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
 
   </main>
 
   <div id="customModal" class="custom-modal-mask" onclick="toggleCustomModal(false)">
     <div class="custom-modal-box" onclick="event.stopPropagation()">
       <div class="d-flex justify-content-between align-items-center mb-3">
-        <h5 class="fw-bold mb-0">自製原生 Modal 元件</h5>
+        <h5 class="fw-bold mb-0">彈出視窗</h5>
         <button type="button" class="btn-close" onclick="toggleCustomModal(false)"></button>
       </div>
       <p class="text-muted small">
-        這是一個以純原生 JavaScript 與 CSS 實作的彈窗。展示了：
+        這是一個以 JavaScript 與 CSS 實作的彈窗。展示了：
       </p>
       <ul class="text-muted small">
-        <li><code>event.stopPropagation()</code>：防止點擊彈窗內部時誤觸背景遮罩關閉。</li>
+        <li><code>event.stopPropagation()</code>：防止點擊彈窗內部時誤觸背景</li>
         <li><code>document.body.style.overflow = 'hidden'</code>：彈窗開啟時鎖定背景滾動條。</li>
       </ul>
       <div class="text-end">
@@ -249,12 +280,11 @@
 
   <footer class="py-4 bg-dark text-white-50 text-center small">
     <div class="container">
-      © 2026 . Built with HTML5, CSS3, Bootstrap 5 & GitHub Pages.
+      © 2026 WeiHsiang Zhuo All rights reserved
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
   <script>
     function toggleCustomModal(show) {
       const modal = document.getElementById('customModal');
@@ -268,4 +298,5 @@
     }
   </script>
 </body>
+
 </html>
