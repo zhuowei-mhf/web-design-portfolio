@@ -58,6 +58,10 @@
         本網頁以過去在usr計畫所架設的網站為基準，並聚焦於前端 HTML5/CSS 基礎設計、RWD、資料表格排版、表單驗證等前端功能與 GitHub 專案部署實作。
       </p>
     </div>
+    <div class="mt-4">
+      <a href="https://usr.ie.nthu.edu.tw" target="_blank" class="btn btn-outline-info px-4">前往 USR 計畫官方網站 <i
+          class="bi bi-box-arrow-up-right"></i></a>
+    </div>
   </header>
 
   <section id="carousel-section" class="py-5 bg-white border-bottom">
@@ -122,7 +126,7 @@
               <span class="badge bg-primary mb-2">HTML5 / Flexbox</span>
               <h5 class="card-title fw-bold">首頁圖文排版與彈窗</h5>
               <p class="card-text text-muted small">
-                實際負責教育部 USR 計畫網路系統中，實作計畫願景的雙欄圖文排版，並以 JavaScript 開發最新消息點擊開窗。右側為運用 CSS Flexbox 與 Bootstrap 實作的RWD展示。
+                實際負責教育部 USR 計畫網路系統中，實作計畫願景的雙欄圖文排版，並以 JavaScript 開發最新消息彈出視窗功能，可點擊下方按鈕體驗彈窗功能。
               </p>
               <button class="btn btn-outline-primary btn-sm mt-2" onclick="toggleCustomModal(true)">點我展示彈窗功能</button>
             </div>
@@ -145,9 +149,9 @@
             </div>
             <div class="col-12">
               <div class="card border-0 shadow-sm p-3">
-                <h5 class="fw-bold"><i class="bi bi-printer text-primary me-2"></i>列印排版 (Print CSS)</h5>
+                <h5 class="fw-bold"><i class="bi bi-printer text-primary me-2"></i>列印排版</h5>
                 <p class="text-muted small mb-0">實作 <code>@media print</code> 規則，在列印或匯出 PDF
-                  時自動隱藏導覽列（如頂段頁面或著最底下的版權說明）、操作按鈕等無效標籤。</p>
+                  時自動隱藏導覽列（如最底下的版權說明）等無效標籤。</p>
               </div>
             </div>
           </div>
@@ -229,10 +233,10 @@
             <img src="assets/img/usr_form.png" class="showcase-img" alt="問卷表單截圖"
               onerror="this.src='https://placehold.co/600x350/f8f9fa/495057?text=Form+Validation';">
             <div class="card-body">
-              <span class="badge bg-warning text-dark mb-2">表單元件 / Print CSS</span>
-              <h5 class="card-title fw-bold">動態問卷與列印優化</h5>
+              <span class="badge bg-warning text-dark mb-2">表單/Form</span>
+              <h5 class="card-title fw-bold">問卷功能</h5>
               <p class="card-text text-muted small">
-                跨角色問卷與動態表單系統，支援單選、複選、開放文字題型與送出前防呆檢查。右側為運用 HTML5 表單驗證機制設計的實作範例。
+                問卷系統，支援單選、複選、開放文字題型與送出前防呆檢查。右側為運用 HTML5 表單驗證機制設計的實作範例。
               </p>
             </div>
           </div>
@@ -240,32 +244,38 @@
         <div class="col-lg-7">
           <h6 class="fw-bold text-success mb-3"><i class="bi bi-cursor"></i> 本網站測試 (可互動)</h6>
           <div class="card border-0 shadow-sm p-4 h-100 d-flex flex-column justify-content-center">
-            <form onsubmit="event.preventDefault(); alert('表單驗證成功！');">
+            <form id="demoForm" class="needs-validation" novalidate>
               <div class="row g-3">
                 <div class="col-md-6">
-                  <label class="form-label fw-bold">參與身分 <span class="text-danger">*</span></label>
+                  <label class="form-label fw-bold">參與身分 <span class="text-danger">*</span>       </label>
                   <select class="form-select" required>
                     <option value="">請選擇您的身分...</option>
                     <option value="1">授課教師</option>
                     <option value="2">修課學生</option>
                     <option value="3">教學助理 (TA)</option>
                   </select>
+                  <div class="invalid-feedback">請選擇一個身分。</div>
                 </div>
                 <div class="col-md-6">
                   <label class="form-label fw-bold">聯絡 Email <span class="text-danger">*</span></label>
                   <input type="email" class="form-control" placeholder="name@example.com" required>
+                  <div class="invalid-feedback">請輸入有效的 Email 格式。</div>
                 </div>
                 <div class="col-12">
-                  <label class="form-label fw-bold">心得或建議 (至少 10 字)</label>
-                  <textarea class="form-control" rows="3" minlength="10" placeholder="請輸入本次實作的心得反饋..."
-                    required></textarea>
+                  <label class="form-label fw-bold">心得或建議 (至少 10 字) <span class="text-danger">*</span></label>
+                  <textarea class="form-control" rows="3" minlength="10" placeholder="請輸入..." required></textarea>
+
+                  <div class="invalid-feedback">
+                    內容請至少輸入 10 個字！
+                  </div>
                 </div>
                 <div class="col-12">
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="agreeRule" required>
                     <label class="form-check-label small text-muted" for="agreeRule">
-                      我已確認上述資料填寫無誤，並同意遵循課堂作業規範
+                      我已確認上述資料填寫無誤
                     </label>
+                    <div class="invalid-feedback">送出前請先勾選同意。</div>
                   </div>
                 </div>
                 <div class="col-12 mt-3">
@@ -314,6 +324,18 @@
         document.body.style.overflow = '';
       }
     }
+    document.getElementById('demoForm').addEventListener('submit', function (event) {
+        event.preventDefault(); 
+
+        if (!this.checkValidity()) {
+          event.stopPropagation();
+          this.classList.add('was-validated');
+        } else {
+          alert('表單驗證成功！字數與格式皆符合規定。');
+          this.classList.remove('was-validated');
+          this.reset(); 
+        }
+      }, false);
   </script>
 </body>
 
